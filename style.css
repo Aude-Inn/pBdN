@@ -1,0 +1,355 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  font-family: cursive;
+}
+/* _______________________________________________________________________________________________________ */
+/* _______________________________________________________________________________________________________ */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+header img {
+  width: 80px;
+}
+
+a {
+  text-decoration: none;
+  color: #2c3e50;
+  margin-left: 20px;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+a:hover {
+  color: #ed45df;
+}
+button {
+  background-color: #ed45df;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 50px;
+  font-size: 0.5rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+/* _______________________________________________________________________________________________________ */
+/* Main Content */
+#main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+#main > div {
+  flex: 1;
+  min-width: 300px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+  font-size: 1.3rem;
+  color: #34495e;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+/* _______________________________________________________________________________________________________ */
+/* Profile Card */
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.profile-container img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.profile-container h3 {
+  font-size: 1.6rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.profile-container p {
+  font-size: 1rem;
+  color: #7f8c8d;
+  margin-bottom: 15px;
+}
+#monTextarea {
+  width: 500px;
+  height: 150px;
+}
+/* _______________________________________________________________________________________________________ */
+/* Profile Button */
+.profile-button {
+  background-color: #ed45df;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.profile-button:hover {
+  background-color: #7d1f8b;
+  transform: scale(1.05);
+}
+/* _______________________________________________________________________________________________________ */
+/* Post Cards */
+.posts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.post {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.post h3 {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.post p {
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+.post-button {
+  background-color: #ed45df;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 50px;
+  font-size: 0.5rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 30px;
+}
+hr {
+  margin: 20px 0;
+}
+/* _______________________________________________________________________________________________________ */
+/* Hover Effect for Cards */
+.post:hover,
+.profile-container:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+/* _______________________________________________________________________________________________________ */
+/* Responsive Design */
+@media (max-width: 768px) {
+  #main {
+    flex-direction: column;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+  }
+
+  header nav a {
+    margin: 5px 0;
+  }
+
+  .profile-button {
+    width: 100%;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+  }
+
+  .profile-container img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-button {
+    padding: 10px 20px;
+  }
+}
+/* _______________________________________________________________________________________________________ */
+/* Présentation de l'application - #pres */
+#pres {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ff66b2, #ff99cc, #ff66cc);
+  padding: 50px 20px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+  transform: translateY(0);
+  opacity: 0;
+  animation: fadeInUp 1s forwards, slideIn 1s ease-in-out;
+}
+
+#pres h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  animation: textAnimation 2s ease-in-out;
+}
+
+#pres p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 800px;
+  margin-bottom: 30px;
+  animation: textAnimation 2s ease-in-out;
+}
+
+#pres button {
+  padding: 15px 30px;
+  background-color: #ffffff;
+  color: #ff66cc;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#pres button:hover {
+  background-color: #ff66cc;
+  color: white;
+  transform: scale(1.1);
+}
+/* _______________________________________________________________________________________________________ */
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes textAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* _______________________________________________________________________________________________________ */
+
+/* bouton submit */
+#submitButton {
+  display: none; /* Le bouton est caché par défaut */
+  margin-top: 10px;
+}
+
+/* _______________________________________________________________________________________________________ */
+
+#form-container {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+
+.form-wrapper {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 100px 200px;
+  background-color: #ffffff;
+}
+
+.form-log {
+  display: flex;
+  border: 1px solid #ffffff;
+  background: linear-gradient(135deg, #ff66b2, #ff99cc, #ff66cc);
+  border-radius: 8px;
+  padding: 100px 200px;
+  background-color: #ffffff;
+}
+
+.signup {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup input,
+.signup textarea {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+}
+
+.login input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
